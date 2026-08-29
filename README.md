@@ -60,7 +60,8 @@ A log-transformed model was also tested but performed worse (~0.433), so the ori
 The interactive dashboard includes **KPIs, RFM segments, K-Means clusters, cohort retention, customer filtering, top customers, and targeted business recommendations**.
 
 ## Technologies
-**Python • Pandas • NumPy • Matplotlib • Seaborn • Scikit-learn • Streamlit • Jupyter • Git/GitHub**
+## Technologies
+**Python • SQL • SQLite • Pandas • NumPy • Matplotlib • Seaborn • Scikit-learn • Streamlit • Jupyter • Git/GitHub**
 
 ## Project Structure
 ```text
