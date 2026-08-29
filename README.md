@@ -1,9 +1,12 @@
 # Customer Segmentation & Retention Analysis
 
 ## Project Overview
-End-to-end Data Science project analyzing retail customer behavior to identify valuable customer groups, understand retention, and support targeted marketing decisions.
+End-to-end **Data Science & Machine Learning project** analyzing retail customer behavior to identify valuable customers, measure retention, and support targeted marketing decisions.
 
-The project combines **EDA, RFM segmentation, cohort analysis, K-Means clustering, and an interactive Streamlit dashboard**.
+The project combines **EDA, SQL, RFM segmentation, cohort analysis, K-Means clustering, Streamlit, Docker, and AWS deployment**.
+
+## 🌐 Live Dashboard
+**AWS:** https://cu-637c0e155f2e46d4b18de0f714f4442c.ecs.us-east-2.on.aws
 
 ## Business Questions
 - Who are the most valuable customers?
@@ -12,36 +15,24 @@ The project combines **EDA, RFM segmentation, cohort analysis, K-Means clusterin
 - Can Machine Learning identify natural customer groups?
 - What strategy should be used for each customer segment?
 
-## Dataset
-The **Online Retail dataset** contains more than 500,000 transactions with customer, product, quantity, price, date, and country information.
-
-Data preparation included missing-value handling, duplicate removal, datetime conversion, transaction validation, and creation of:
+## Dataset & Analysis
+The **Online Retail dataset** contains 500,000+ transactions. Data preparation included missing-value handling, duplicate removal, transaction validation, datetime conversion, and feature engineering.
 
 `TotalPrice = Quantity × UnitPrice`
-
-## Key Results
 
 | Metric | Result |
 |---|---:|
 | Unique Customers | **4,338** |
 | Total Revenue | **~$8.89M** |
 | Avg. Purchase Frequency | **4.27 orders** |
-| Avg. Customer Value | **~$2,048.69** |
 | Highest Revenue Month | **November 2011** |
 
-## RFM & Retention Analysis
-Customers were evaluated using **Recency, Frequency, and Monetary value** and classified into segments including Champions, Loyal Customers, Potential Loyalists, At Risk, and Lost Customers.
+## RFM, Retention & Machine Learning
+Customers were analyzed using **Recency, Frequency, and Monetary Value (RFM)**. Cohort analysis measured customer retention over time.
 
-Cohort analysis measured customer retention after the first purchase and revealed substantial opportunities for **retention, loyalty, and reactivation campaigns**.
+K-Means clustering was applied to standardized RFM features. The **Elbow Method** and **Silhouette Score** were used for model selection.
 
-## Machine Learning — K-Means
-K-Means clustering was applied to standardized RFM features.
-
-**Elbow Method** and **Silhouette Score** were used to evaluate K. The final model uses **K = 4**, with a Silhouette Score of approximately **0.616**.
-
-A log-transformed model was also tested but performed worse (~0.433), so the original standardized RFM model was retained.
-
-## Final Customer Clusters
+**Final model: K = 4 | Silhouette Score ≈ 0.616**
 
 | Segment | Customers | Recency | Frequency | Monetary |
 |---|---:|---:|---:|---:|
@@ -51,38 +42,30 @@ A log-transformed model was also tested but performed worse (~0.433), so the ori
 | VIP | 13 | 7.4 | 82.54 | $127,188 |
 
 ## Business Recommendations
-- **VIP:** Protect and retain with personalized service and exclusive benefits.
-- **Loyal High-Value:** Strengthen loyalty and cross-sell relevant products.
-- **Regular:** Increase purchase frequency through targeted recommendations.
-- **Inactive:** Use personalized win-back and reactivation campaigns.
+- **VIP:** Personalized service and exclusive benefits.
+- **Loyal High-Value:** Loyalty programs and cross-selling.
+- **Regular:** Targeted recommendations to increase purchase frequency.
+- **Inactive:** Personalized win-back and reactivation campaigns.
 
-## Streamlit Dashboard
-The interactive dashboard includes **KPIs, RFM segments, K-Means clusters, cohort retention, customer filtering, top customers, and targeted business recommendations**.
+## Dashboard & Cloud Deployment
+The Streamlit dashboard provides **KPIs, RFM segments, K-Means clusters, cohort retention, customer filtering, and business recommendations**.
+
+`Streamlit → Docker → Amazon ECR → Amazon ECS → Public AWS Application`
 
 ## Technologies
-## Technologies
-**Python • SQL • SQLite • Pandas • NumPy • Matplotlib • Seaborn • Scikit-learn • Streamlit • Jupyter • Git/GitHub**
+**Python • SQL • SQLite • Pandas • NumPy • Scikit-learn • Matplotlib • Seaborn • Streamlit • Docker • AWS ECR • AWS ECS • Jupyter • Git/GitHub**
 
-## Project Structure
-```text
-├── dashboard/app.py
-├── data/
-├── notebooks/
-│   ├── 01_data_understanding.ipynb
-│   ├── 02_data_cleaning.ipynb
-│   ├── 03_data_analysis.ipynb
-│   ├── 04_rfm_segmentation.ipynb
-│   ├── 05_retention_cohort_analysis.ipynb
-│   └── 06_customer_segmentation_ml.ipynb
-├── README.md
-└── requirements.txt
-```
-
-## Run the Dashboard
+## Run Locally
 ```bash
 pip install -r requirements.txt
 python -m streamlit run dashboard/app.py
 ```
 
+## Docker
+```bash
+docker build -t customer-segmentation-app .
+docker run -p 8501:8501 customer-segmentation-app
+```
+
 ## Conclusion
-This project demonstrates an end-to-end customer analytics workflow combining **data analysis, retention analytics, unsupervised Machine Learning, business interpretation, and interactive dashboard development**.
+An end-to-end customer analytics project demonstrating **data analysis, SQL, retention analytics, unsupervised Machine Learning, business interpretation, dashboard development, containerization, and AWS cloud deployment**.

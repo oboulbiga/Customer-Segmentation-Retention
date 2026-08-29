@@ -1,0 +1,12 @@
+.venv
+.git
+.gitignore
+__pycache__
+*.pyc
+.ipynb_checkpoints
+notebooks
+sql
+reports
+images
+*.db
+.DS_Store
