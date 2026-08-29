@@ -19,4 +19,7 @@ __pycache__/
 .env
 # Large datasets
 data/raw/OnlineRetail.csv
-data/processed/online_retail_clean.csv
+data/processed/online_retail_clean.csv 
+
+# Local SQLite database
+sql/online_retail.db
