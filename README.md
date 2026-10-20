@@ -5,9 +5,6 @@ End-to-end **Data Science & Machine Learning project** analyzing retail customer
 
 The project combines **EDA, SQL, RFM segmentation, cohort analysis, K-Means clustering, Streamlit, Docker, and AWS deployment**.
 
-## 🌐 Live Dashboard
-**AWS:** https://cu-637c0e155f2e46d4b18de0f714f4442c.ecs.us-east-2.on.aws
-
 ## Business Questions
 - Who are the most valuable customers?
 - Which customers are becoming inactive?
